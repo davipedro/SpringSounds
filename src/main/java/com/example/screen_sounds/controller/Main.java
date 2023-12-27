@@ -41,7 +41,7 @@ public class Main {
     private void pesquisaPorArtista(){
         System.out.println("Informe o nome do artista");
         String nomeArtista = scanner.nextLine();
-        artistaService.pesquisaPorArtista(nomeArtista);
+        artistaService.pesquisaArtistaWeb(nomeArtista);
 
 
     }
