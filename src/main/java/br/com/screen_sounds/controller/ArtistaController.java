@@ -6,18 +6,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/artista")
+@RequestMapping("/artist")
 public class ArtistaController {
 
     ArtistService artistService = new ArtistService();
 
-    @GetMapping("/{nomeArtista}")
-    public ResponseEntity<ArtistDTO> getArtista(@PathVariable String nomeArtista){
-        ArtistDTO artista = artistService.buscaArtistaAPI(nomeArtista);
-        if (artista == null){
-            return ResponseEntity.notFound().build();
+    @GetMapping("/{artistName}")
+    public ResponseEntity<ArtistDTO> getArtist(@PathVariable String artistName){
+        ArtistDTO artist = artistService.searchArtistAPI(artistName);
+        if (artist != null){
+            return ResponseEntity.ok(artist);
         } else {
-            return ResponseEntity.ok(artista);
+            return ResponseEntity.notFound().build();
         }
     }
 }

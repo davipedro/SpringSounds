@@ -12,28 +12,50 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class IdMusicDTO {
 
-    @JsonAlias("hits")
-    private MusicaHit[] musicaHits;
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class IdMusic {
+        @JsonAlias("hits")
+        private MusicHit[] musicHits;
 
-    public MusicaHit[] getMusicaHits(){
-        return musicaHits;
+        public MusicHit[] getMusicHits(){
+            return musicHits;
+        }
+
+        public void setMusicHits(MusicHit[] musicHits) {
+            this.musicHits = musicHits;
+        }
+
+        public IdMusic(){}
     }
 
-    public static class MusicaHit {
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class MusicHit {
         @JsonProperty("result")
-        private IdMusicDTO.MusicaHit.Result result;
+        private Result result;
 
-        public IdMusicDTO.MusicaHit.Result getResult() {
+        public Result getResult() {
             return result;
         }
 
-        public static class Result {
-            @JsonAlias("id")
-            private Long id;
-            public Long getId(){
-                return id;
-            }
+        public void setResult(Result result){
+            this.result = result;
         }
+
+        public MusicHit(){}
+    }
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Result {
+        @JsonAlias("id")
+        private Long id;
+        public Long getId(){
+            return id;
+        }
+
+        public void setId(Long id) {
+            this.id = id;
+        }
+
+        public Result(){}
     }
 
 }

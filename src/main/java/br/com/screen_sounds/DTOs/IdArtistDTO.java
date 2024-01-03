@@ -3,8 +3,6 @@ package br.com.screen_sounds.DTOs;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.Arrays;
-
 
 /**
  * DTO para buscar apenas o id do artista, pois a API (Genius - Song Lyrics)
@@ -15,22 +13,22 @@ import java.util.Arrays;
 public class IdArtistDTO {
 
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class IdDTO {
-        private ArtistaHit[] hits;
+    public static class IdArtist {
+        private ArtistHit[] artistHits;
 
-        public ArtistaHit[] getHits() {
-            return hits;
+        public ArtistHit[] getArtistHits() {
+            return artistHits;
         }
 
-        public void setHits(ArtistaHit[] hits) {
-            this.hits = hits;
+        public void setHits(ArtistHit[] hits) {
+            this.artistHits = hits;
         }
 
-        public IdDTO(){}
+        public IdArtist(){}
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class ArtistaHit {
+    public static class ArtistHit {
         @JsonProperty("result")
         private Result result;
 
@@ -42,7 +40,7 @@ public class IdArtistDTO {
             this.result = result;
         }
 
-        public ArtistaHit(){}
+        public ArtistHit(){}
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
