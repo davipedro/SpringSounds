@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/artist")
-public class ArtistaController {
+public class ArtistController {
 
     ArtistService artistService = new ArtistService();
 
