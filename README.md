@@ -1,4 +1,4 @@
-# Spring Sounds
+# Spring Sounds (🔧work in progress..)
 Essa aplicação é buscador de músicas e artistas com elementos similares a de redes sociais
 
 
